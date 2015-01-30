@@ -1,4 +1,4 @@
-name := """demo"""
+name := """demo a"""
 
 version := "1.0-SNAPSHOT"
 
