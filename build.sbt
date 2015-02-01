@@ -6,7 +6,7 @@ mainClass in assembly := Some("play.core.server.NettyServer")
 
 fullClasspath in assembly += Attributed.blank(PlayKeys.playPackageAssets.value)
 
-name := """demo"""
+name := """Another demo"""
 
 version := "1.0-SNAPSHOT"
 
