@@ -10,7 +10,7 @@ name := """demo"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val root = (project in file(".")).enablePlugins(PlayScala, DockerPlugin)
 
 scalaVersion := "2.11.1"
 
@@ -27,3 +27,21 @@ libraryDependencies ~= { _ map {
       exclude("com.typesafe.play", "sbt-link")
   case m => m
 }}
+
+
+
+// -------------Docker configuration-------------
+
+maintainer in Docker := "fernando.benjamin@zalando.de"
+
+dockerRepository := Some("docker-registry.zalando/fbenjamin")
+
+dockerBaseImage := "zalando/openjdk:8u40-b09-2"
+
+dockerExposedPorts in Docker := Seq(9000, 9443)
+
+dockerExposedVolumes in Docker := Seq("/data/logs", "/data/configuration")
+
+dockerEntrypoint in Docker := Seq(
+  "./bin/demo"
+)
