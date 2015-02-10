@@ -39,9 +39,3 @@ dockerRepository := Some("docker-registry.zalando/fbenjamin")
 dockerBaseImage := "zalando/openjdk:8u40-b09-2"
 
 dockerExposedPorts in Docker := Seq(9000, 9443)
-
-dockerExposedVolumes in Docker := Seq("/data/logs", "/data/configuration")
-
-dockerEntrypoint in Docker := Seq(
-  "./bin/demo"
-)
