@@ -1,0 +1,10 @@
+---
+deployment: scala-demo
+  registry: docker-registry.zalando
+  image: fbenjamin/demo
+  version: latest
+  export: 8080:9000
+
+## output
+output:
+   file: "yes"
