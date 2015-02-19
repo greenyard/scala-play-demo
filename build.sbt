@@ -8,7 +8,7 @@ fullClasspath in assembly += Attributed.blank(PlayKeys.playPackageAssets.value)
 
 name := """demo"""
 
-version := "1.0-SNAPSHOT"
+version := "latest"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala, DockerPlugin)
 
