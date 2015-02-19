@@ -34,7 +34,9 @@ libraryDependencies ~= { _ map {
 
 maintainer in Docker := "fernando.benjamin@zalando.de"
 
-dockerRepository := Some("docker-registry.zalando/fbenjamin")
+
+// Add this to let Jenkins overwrite your 
+dockerRepository :=  Some(sys.props.getOrElse("JENKINS_REPOSITORY", default="docker-registry.zalando/fbenjamin")) 
 
 dockerBaseImage := "zalando/openjdk:8u40-b09-2"
 
