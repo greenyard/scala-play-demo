@@ -1,5 +1,7 @@
 web:
   image: docker-registry.zalando/fbenjamin/demo
+  links:
+   - db
   ports:
    - "80:9000"
 db:
