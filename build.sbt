@@ -8,7 +8,7 @@ fullClasspath in assembly += Attributed.blank(PlayKeys.playPackageAssets.value)
 
 name := """demo"""
 
-version := "latest"
+version := sys.props.getOrElse("CI_MANAGED_VERSION", default="1.0-SNAPSHOT")
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala, DockerPlugin)
 
@@ -36,7 +36,7 @@ maintainer in Docker := "fernando.benjamin@zalando.de"
 
 
 // Add this to let Jenkins overwrite your 
-dockerRepository :=  Some(sys.props.getOrElse("JENKINS_REPOSITORY", default="docker-registry.zalando/fbenjamin")) 
+dockerRepository :=  Some(sys.props.getOrElse("CI_DOCKER_REPOSITORY", default="docker-registry.zalando/fbenjamin")) 
 
 dockerBaseImage := "zalando/openjdk:8u40-b09-2"
 
