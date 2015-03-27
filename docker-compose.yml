@@ -4,5 +4,3 @@ web:
    - db
   ports:
    - "80:9000"
-db:
-  image: postgres
