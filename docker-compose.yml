@@ -1,6 +1,4 @@
 web:
   image: docker-registry.zalando/ci_cd/demo:latest
-  links:
-   - db
   ports:
    - "80:9000"
