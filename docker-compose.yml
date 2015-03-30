@@ -1,5 +1,5 @@
 web:
-  image: docker-registry.zalando/fbenjamin/demo
+  image: docker-registry.zalando/ci_cd/demo:latest
   links:
    - db
   ports:
