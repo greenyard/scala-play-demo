@@ -1,4 +1,4 @@
 web:
-  image: docker-registry.zalando/fashion-advice-shop/demo:latest
+  image: docker-registry.zalando/ci_cd/demo:latest
   ports:
    - "80:9000"
